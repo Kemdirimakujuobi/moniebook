@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Item</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-white">
+
+    <!-- Header Start -->
+
+    <header class="sticky-header">
+        <div class="header-content">
+            <button type="button" id="closeButton" class="btn-close">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <h1 class="text-lg font-semibold">Add new item</h1>
+            <button type="submit" form="newItemForm" class="btn-primary">
+                Save item
+            </button>
+        </div>
+    </header>
+
+    <!-- Header End -->
+
+
+    <main class="main-content">
+        <form id="newItemForm" class="space-y-6">
+
+            <!-- Item Type Selector Start -->
+
+            <div class="item-type-selector">
+                <h2 class="text-xl font-semibold mb-4">Select item type</h2>
+                <div id="itemTypeSelector" class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="itemType" value="standard" checked>
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <h3 class="text-base font-medium">Standard item</h3>
+                            <p class="text-sm text-gray-500">Standard item has a single SKU.</p>
+                        </div>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="itemType" value="variable">
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <h3 class="text-base font-medium">Variable item</h3>
+                            <p class="text-sm text-gray-500">A group of similar products with different attributes like
+                                "Size" or "Colour". Each variant has its own SKU and inventory.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Item Type Selector End -->
+
+            <!-- Spacer Component -->
+            <div style="display: flex; width: 100%; max-width: 640px; height: 22px;"></div>
+
+            <!--divider div-->
+
+            <div class="divider"></div>
+            </div>
+
+            <!-- Spacer Component -->
+            <div style="display: flex; width: 100%; max-width: 640px; height: 8px;"></div>
+
+
+            <!-- Standard Form Start -->
+
+
+            <form id="newItemForm" class="space-y-6">
+                <!-- Group 1: Item Name and Category -->
+                <div class="form-group">
+                    <label for="itemName" class="form-label">Item name</label>
+                    <input type="text" id="itemName" name="itemName" class="form-input"
+                        placeholder="eg Bottle or Jollof rice">
+                </div>
+                <div class="form-group">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" name="category" class="form-input">
+                        <option value="">Click to select</option>
+                    </select>
+                </div>
+
+                <!-- 32px spacing between Item Name and Category -->
+                <div style="height: 8px;"></div>
+
+                <!-- Group 2: Price Inputs and Price Widget -->
+                <div class="price-inputs-container">
+                    <div class="flex space-x-4 mb-3">
+                        <div class="form-group flex-1">
+                            <label for="sellPrice" class="form-label">Sell price</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">₦</span>
+                                <input type="number" id="sellPrice" name="sellPrice" class="form-input pl-7"
+                                    placeholder="0.0">
+                            </div>
+                        </div>
+                        <div class="form-group flex-1">
+                            <div class="flex justify-between items-center">
+                                <label for="costPrice" class="form-label">Cost price</label>
+                                <span class="text-sm text-gray-500">Optional</span>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">₦</span>
+                                <input type="number" id="costPrice" name="costPrice" class="form-input pl-7"
+                                    placeholder="0.0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Widget -->
+                    <div id="priceWidget" class="hidden">
+                        <div id="profitLossDisplay"
+                            class="bg-[#1E2532] text-white p-4 rounded-t-[12px] h-[40px] flex items-center">
+                            <span id="profitLossLabel"
+                                class="text-xs font-semibold px-2 py-1 rounded mr-2">PROFIT</span>
+                            <p class="text-base">Your <span id="profitLossText">profit</span> from selling this product
+                                is
+                                <span id="profitLossAmount" class="font-semibold">₦0.00</span>
+                            </p>
+                        </div>
+                        <div
+                            class="bg-[#262F3D] text-[#8A94A6] p-4 rounded-b-[12px] text-sm h-[34px] flex items-center">
+                            We calculate your earnings by comparing your cost price to your sell price.
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Spacer Component -->
+            <div style="display: flex; width: 100%; max-width: 640px; height: 8px;"></div>
+
+                <!--divider div-->
+
+            <div class="divider"></div>
+        </div>
+
+                <!-- Spacer Component -->
+            <div style="display: flex; width: 100%; max-width: 640px; height: 8px;"></div>
+
+                <!-- Variants Section Start -->
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-semibold">Variants</h3>
+                        <p class="text-sm text-gray-500">Use variants if the item has different sizes, colors or other
+                            options.</p>
+                    </div>
+                    <button type="button" id="addVariantsBtn"
+                        class="bg-white text-blue-600 px-4 py-2 border border-blue-600 rounded-md hover:bg-blue-50">Add
+                        variants</button>
+                </div>
+                <!-- Variants Section End -->
+            </form>
+
+            <!-- Variants Section End -->
+
+        </form>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
