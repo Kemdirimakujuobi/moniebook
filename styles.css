@@ -155,12 +155,12 @@ main {
 }
 
 .radio-option:hover {
-    background-color: #FCFCFD;
+    background-color: #f6f7f9;
 }
 
 .radio-option.selected,
 .radio-option input:checked {
-    background-color: #FCFCFD;
+    background-color: #f6f7f9;
 }
 /* radio ends */
 
