@@ -20,18 +20,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Item Type Selector Functionality
-    itemTypeSelector.addEventListener('change', function (event) {
-        if (event.target.type === 'radio') {
-            const selectedType = event.target.value;
-            if (selectedType === 'standard') {
-                standardForm.classList.remove('hidden');
-                variableForm.classList.add('hidden');
-            } else if (selectedType === 'variable') {
-                standardForm.classList.add('hidden');
-                variableForm.classList.remove('hidden');
-            }
-        }
+    const radioOptions = itemTypeSelector.querySelectorAll('.radio-option');
+    
+    radioOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            radioOptions.forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+            this.querySelector('input[type="radio"]').checked = true;
+            
+            // Trigger the view switch based on the selected item type
+            const selectedType = this.querySelector('input[type="radio"]').value;
+            switchView(selectedType);
+        });
     });
+
+    function switchView(itemType) {
+        // Implement your view switching logic here
+        console.log(`Switching to ${itemType} view`);
+        // You can add code here to show/hide different sections of your form
+        // based on the selected item type
+    }
 
     // Profit/Loss Calculation Functionality
     function calculateProfit() {
