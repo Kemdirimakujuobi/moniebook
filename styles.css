@@ -430,6 +430,8 @@ body {
     margin: 0;
 }
 
+/* variants container start */
+
 .variants-container {
     border: 1px solid #F1F2F4;
     padding: 24px 16px;
@@ -442,4 +444,12 @@ body {
 
 .variants-content {
     flex-grow: 1;
+}
+
+.secondary-btn {
+    display: flex;
+    height: var(32px);
+    padding: 0px var(16px);
+    justify-content: center;
+    align-items: center;    
 }
