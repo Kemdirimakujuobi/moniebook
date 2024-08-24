@@ -429,4 +429,5 @@ body {
 .variants-border {
     border: 1px solid #F1F2F4;
     border-radius: 12px; 
+    padding: 16px, 24px, 16px, 24px;
 }
