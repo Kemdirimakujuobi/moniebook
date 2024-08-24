@@ -431,12 +431,13 @@ body {
 }
 
 .variants-container {
-    border: 1px solid #000;
+    border: 1px solid #F1F2F4;
     padding: 24px 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
+    border-radius: 12px;
 }
 
 .variants-content {
