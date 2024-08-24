@@ -451,5 +451,7 @@ body {
     height: var(32px);
     padding: 0px var(16px);
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    border-radius: var(--radius-radius-3, 8px);
+    border: 1px solid var(--feedback-information-outline-default, #C5D8FB);
 }
