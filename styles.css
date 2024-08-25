@@ -433,9 +433,9 @@ body {
 /* variants container start */
 
 .variants-container {
-    border: 1px solid #000;
+    border: 1px solid #000 !important; /* Temporarily add !important to test */
     padding: 24px 16px;
-}
+  }
 
 .add-variants-btn {
     background-color: white;
