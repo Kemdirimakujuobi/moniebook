@@ -204,24 +204,9 @@ body {
     padding: 1.5rem;
 }
 
-.btn-close {
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F6F7F9;
-    border-radius: 9999px;
-    color: #4B5563;
-}
+/* buttons */
 
-.btn-close:hover {
-    color: #1F2937;
-}
-
-.btn-primary {
-    background-color: #246DF0;
-    color: white;
+.btn-base {
     font-weight: 600;
     padding: 0 16px;
     border-radius: 8px;
@@ -230,11 +215,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-primary {
+    composes: btn-base;
+    background-color: #246DF0;
+    color: white;
 }
 
 .btn-primary:hover {
     background-color: #1c54b2;
 }
+
+.btn-secondary {
+    composes: btn-base;
+    background-color: white;
+    color: #246DF0;
+    border: 1px solid #246DF0;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f7ff;
+}
+
+/* buttons end */
 
 #newItemForm {
     max-width: 640px;
@@ -445,4 +451,3 @@ body {
 .variants-content {
     flex-grow: 1;
 }
-

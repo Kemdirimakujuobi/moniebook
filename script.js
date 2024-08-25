@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const profitLossLabel = document.getElementById('profitLossLabel');
     const profitLossText = document.getElementById('profitLossText');
     const profitLossAmount = document.getElementById('profitLossAmount');
-    const addVariantsBtn = document.getElementById('addVariantsBtn');
+    const addVariantsBtn = document.querySelector('.btn-secondary');
 
     // Close Button Functionality
     closeButton.addEventListener('click', function () {
